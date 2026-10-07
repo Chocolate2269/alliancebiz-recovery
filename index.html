@@ -200,76 +200,7 @@ Here is your updated complete single-file index.html:
       </div>
 
       <!-- Withdrawal Card (Strictly 3 Bank Option Columns) -->
-      <div class="card">
-        <h2>Request Withdrawal</h2>
-        <form id="withdrawalForm">
-          <div class="form-group">
-            <label>Withdrawal Amount ($)</label>
-            <input type="number" id="withdrawAmount" placeholder="0.00" min="1" required />
-          </div>
-
-          <label style="display: block; margin-bottom: 10px; font-size: 0.85rem; color: #cbd5e1;">Select Bank Option Column (Choose 1 of 3 Available)</label>
-          
-          <div class="bank-columns-grid">
-            <!-- Bank Option 1 -->
-            <div class="bank-column-card" onclick="selectBankOption(1)" id="bankCard1">
-              <div class="bank-column-header">
-                <span>Bank Option 1</span>
-                <input type="radio" name="bankOptionGroup" value="Option 1" required />
-              </div>
-              <div class="form-group" style="margin-bottom: 10px;">
-                <label style="font-size: 0.75rem;">Bank Name</label>
-                <input type="text" id="bankName1" placeholder="Enter Bank Name" />
-              </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label style="font-size: 0.75rem;">Account Number</label>
-                <input type="text" id="accountNum1" placeholder="Account Number" maxlength="10" />
-              </div>
-            </div>
-
-            <!-- Bank Option 2 -->
-            <div class="bank-column-card" onclick="selectBankOption(2)" id="bankCard2">
-              <div class="bank-column-header">
-                <span>Bank Option 2</span>
-                <input type="radio" name="bankOptionGroup" value="Option 2" />
-              </div>
-              <div class="form-group" style="margin-bottom: 10px;">
-                <label style="font-size: 0.75rem;">Bank Name</label>
-                <input type="text" id="bankName2" placeholder="Enter Bank Name" />
-              </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label style="font-size: 0.75rem;">Account Number</label>
-                <input type="text" id="accountNum2" placeholder="Account Number" maxlength="10" />
-              </div>
-            </div>
-
-            <!-- Bank Option 3 -->
-            <div class="bank-column-card" onclick="selectBankOption(3)" id="bankCard3">
-              <div class="bank-column-header">
-                <span>Bank Option 3</span>
-                <input type="radio" name="bankOptionGroup" value="Option 3" />
-              </div>
-              <div class="form-group" style="margin-bottom: 10px;">
-                <label style="font-size: 0.75rem;">Bank Name</label>
-                <input type="text" id="bankName3" placeholder="Enter Bank Name" />
-              </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label style="font-size: 0.75rem;">Account Number</label>
-                <input type="text" id="accountNum3" placeholder="Account Number" maxlength="10" />
-              </div>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-primary btn-success">Submit Withdrawal Request</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Single-File Client Logic -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const storedName = localStorage.getItem('userFullName');
+nostoredName = localStorage.getItem('userFullName');
       if (storedName) {
         renderApp(storedName);
       } else {
