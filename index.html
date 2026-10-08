@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alliance Biz Capital</title>
+  <meta name="description" content="Crypto investment platform" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    * { box-sizing: border-box; }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors">
+
+  <!-- ============ AUTH SCREEN ============ -->
+  <div id="auth-screen" class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex items-center justify-center p-4 relative">
+    <button id="theme-toggle-auth" class="absolute top-4 right-4 w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-lg shadow-sm hover:scale-105 transition">
+      🌙
+    </button>
+
+    <div class="w-full max-w-md bg-gradient-to-br from-emerald-500 to-indigo-500 p-[2px] rounded-2xl shadow-xl">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl p-8">
+        <div class="text-center mb-6">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-emerald-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+            AB
+          </div>
+          <h1 class="text-2xl font-bold text-slate-900 dark:text-white mt-4">
+            Alliance <span class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">Biz Capital</span>
+          </h1>
+          <p id="auth-subtitle" class="text-slate-500 dark:text-slate-400 text-sm mt-1">Welcome back</p>
+        </div>
+
+        <form id="auth-form" class="space-y-4">
+          <input id="name-input" type="text" placeholder="Full name" class="hidden w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" />
+          <input id="email-input" type="email" placeholder="Email address" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" />
+          <input id="password-input" type="password" placeholder="Password" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none transition" />
+          <div id="auth-error" class="hidden text-sm text-red-500 bg-red-50 dark:bg-red-950/40 border border-red-100 dark:border-red-900/50 rounded-lg px-3 py-2"></div>
+          <button id="auth-submit" type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-indigo-500 text-white font-semibold shadow-lg shadow-emerald-500/30 hover:opacity-95 active:scale-[0.99] transition">
+            Sign In
+          </button>
+        </form>
+
+        <p class="text-center text-sm text-slate-500 dark:text-slate-400 mt-6">
+          <span id="switch-text">Don't have an account?</span>
+          <button id="switch-btn" class="text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">Sign up</button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DASHBOARD ============ -->
+  <div id="dashboard" class="hidden min-h-screen bg-slate-50 dark:bg-slate-950">
+    <nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-indigo-500 flex items-center justify-center text-white font-bold text-sm">AB</div>
+          <span class="font-bold text-slate-900 dark:text-white hidden sm:block">
+            Alliance <span class="bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">Biz Capital</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="theme-toggle" class="w-9 h-9 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-base hover:scale-105 transition">🌙</button>
+          <span id="greeting" class="text-sm text-slate-500 dark:text-slate-400 hidden sm:block"></span>
+          <button id="logout-btn" class="text-sm px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition">Logout</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+      <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span>Prices from CoinGecko</span>
+        <span>Updated: <span id="last-update">—</span></span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+          <p class="text-slate-500 dark:text-slate-400 text-sm">Portfolio Value</p>
+          <h3 id="portfolio-value" class="text-3xl font-bold text-slate-900 dark:text-white mt-1">$0.00</h3>
+          <p class="text-xs mt-2 text-emerald-500 font-medium">▲ Cash: <span id="cash-balance">$2,500.00</span></p>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+          <p class="text-slate-500 dark:text-slate-400 text-sm">Total Invested</p>
+          <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">$10,000.00</h3>
+          <p class="text-xs mt-2 text-slate-400">Since inception</p>
+        </div>
+        <div class="rounded-2xl p-6 shadow-lg text-white bg-gradient-to-br from-amber-500 to-emerald-500">
+          <p class="text-white/80 text-sm">Bitcoin Holdings</p>
+          <h3 id="btc-holdings" class="text-3xl font-bold mt-1">0 BTC</h3>
+          <p id="btc-value" class="text-white/80 text-xs mt-2">≈ $0.00</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+        <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <h2 class="font-semibold text-slate-900 dark:text-white">Your Holdings</h2>
+          <span class="text-xs px-2 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-medium">Live</span>
+        </div>
+        <div id="holdings-list" class="divide-y divide-slate-100 dark:divide-slate-800"></div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <button onclick="openModal('deposit')" class="py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-indigo-500 text-white font-medium text-sm shadow-lg shadow-emerald-500/20">
+          <span class="block text-lg mb-1">↓</span>Deposit
+        </button>
+        <button onclick="openModal('withdraw')" class="py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 font-medium text-sm">
+          <span class="block text-lg mb-1">↑</span>Withdraw
+        </button>
+        <button onclick="showToast('Coming soon')" class="py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 font-medium text-sm">
+          <span class="block text-lg mb-1">+</span>Buy
+        </button>
+        <button onclick="showToast('Coming soon')" class="py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 font-medium text-sm">
+          <span class="block text-lg mb-1">≡</span>History
+        </button>
+      </div>
+
+      <p class="text-center text-xs text-slate-400 pt-4">© <span id="year"></span> Alliance Biz Capital. All rights reserved.</p>
+    </main>
+  </div>
+
+  <!-- ============ MODAL ============ -->
+  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="w-full max-w-sm bg-white dark:bg-slate-900 rounded-2xl shadow-2xl p-6 border border-slate-100 dark:border-slate-800">
+      <div class="flex items-center justify-between mb-4">
+        <h3 id="modal-title" class="font-bold text-lg text-slate-900 dark:text-white capitalize">Deposit</h3>
+        <button onclick="closeModal()" class="w-8 h-8 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-500">✕</button>
+      </div>
+      <p id="modal-balance" class="hidden text-xs text-slate-500 dark:text-slate-400 mb-3"></p>
+      <form id="modal-form" class="space-y-4">
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+          <input id="modal-amount" type="number" step="0.01" placeholder="0.00" class="w-full pl-8 pr-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-emerald-500 outline-none" autofocus />
+        </div>
+        <p id="modal-error" class="hidden text-sm text-red-500 bg-red-50 dark:bg-red-950/40 rounded-lg px-3 py-2"></p>
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-indigo-500 text-white font-semibold shadow-lg shadow-emerald-500/30">
+          Confirm <span id="modal-confirm-label">deposit</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-3 rounded-xl shadow-2xl text-sm font-medium z-50"></div>
+
+  <script>
+    /* ============================================================
+       ⚙️ CONFIGURATION — REPLACE THESE TWO VALUES
+       ============================================================ */
+    const SUPABASE_URL = "YOUR_SUPABASE_URL_HERE";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY_HERE";
+
+    /* ============================================================ */
+
+    const { createClient } = supabase;
+    const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    let view = "login";
+    let currentUser = null;
+    let cashBalance = 2500.0;
+    let activeModal = null;
+
+    let coins = [
+      { symbol: "BTC",  name: "Bitcoin",  price: 67420.10, change: 2.41,  holdings: 0.0842 },
+      { symbol: "ETH",  name: "Ethereum", price: 3512.44,  change: 1.18,  holdings: 1.204 },
+      { symbol: "SOL",  name: "Solana",   price: 182.30,   change: -0.62, holdings: 12.5 },
+      { symbol: "USDT", name: "Tether",   price: 1.00,     change: 0.01,  holdings: 295.5 }
+    ];
+
+    const CG_IDS = { BTC: "bitcoin", ETH: "ethereum", SOL: "solana", USDT: "tether" };
+
+    // ===== Element refs =====
+    const $ = (id) => document.getElementById(id);
+    const authScreen = $("auth-screen");
+    const dashboard = $("dashboard");
+
+    // ===== Theme =====
+    function applyTheme() {
+      const saved = localStorage.getItem("abc-theme") || "light";
+      document.documentElement.classList.toggle("dark", saved === "dark");
+      document.querySelectorAll("#theme-toggle, #theme-toggle-auth").forEach(btn => {
+        btn.textContent = saved === "dark" ? "☀️" : "🌙";
+      });
+    }
+    function toggleTheme() {
+      const current = localStorage.getItem("abc-theme") || "light";
+      localStorage.setItem("abc-theme", current === "light" ? "dark" : "light");
+      applyTheme();
+    }
+    $("theme-toggle").addEventListener("click", toggleTheme);
+    $("theme-toggle-auth").addEventListener("click", toggleTheme);
+    applyTheme();
+
+    // ===== Auth view toggle =====
+    $("switch-btn").addEventListener("click", () => {
+      view = view === "login" ? "signup" : "login";
+      renderAuth();
+    });
+
+    function renderAuth() {
+      const isLogin = view === "login";
+      $("name-input").classList.toggle("hidden", isLogin);
+      $("auth-submit").textContent = isLogin ? "Sign In" : "Create Account";
+      $("auth-subtitle").textContent = isLogin ? "Welcome back" : "Create your account";
+      $("switch-text").textContent = isLogin ? "Don't have an account?" : "Already have an account?";
+      $("switch-btn").textContent = isLogin ? "Sign up" : "Sign in";
+      $("auth-error").classList.add("hidden");
+    }
+
+    // ===== Auth form =====
+    $("auth-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = $("name-input").value.trim();
+      const email = $("email-input").value.trim();
+      const password = $("password-input").value;
+
+      $("auth-error").classList.add("hidden");
+
+      if (view === "signup" && password.length < 6) {
+        return showAuthError("Password must be 6+ characters");
+      }
+
+      const btn = $("auth-submit");
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = view === "signup" ? "Creating..." : "Signing in...";
+
+      try {
+        if (view === "signup") {
+          const { data, error } = await db.auth.signUp({
+            email,
+            password,
+            options: { data: { full_name: name } }
+          });
+          if (error) throw error;
+          if (!data.session) {
+            showAuthError("Check your email to confirm your account, then sign in.");
+            view = "login";
+            renderAuth();
+            return;
+          }
+          currentUser = data.user;
+        } else {
+          const { data, error } = await db.auth.signInWithPassword({ email, password });
+          if (error) throw error;
+          currentUser = data.user;
+        }
+        showDashboard();
+      } catch (err) {
+        showAuthError(err.message || "Something went wrong");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+
+    function showAuthError(msg) {
+      const el = $("auth-error");
+      el.textContent = msg;
+      el.classList.remove("hidden");
+    }
+
+    // ===== Session restore =====
+    db.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        currentUser = session.user;
+        showDashboard();
+      }
+    });
+
+    // ===== Dashboard =====
+    async function showDashboard() {
+      if (!currentUser) {
+        const { data } = await db.auth.getUser();
+        currentUser = data.user;
+      }
+      if (!currentUser) return;
+
+      authScreen.classList.add("hidden");
+      dashboard.classList.remove("hidden");
+
+      const fullName = currentUser.user_metadata?.full_name || currentUser.email?.split("@")[0] || "User";
+      $("greeting").textContent = "Hi, " + fullName.split(" ")[0];
+
+      renderHoldings();
+      fetchPrices();
+      setInterval(fetchPrices, 60000);
+    }
+
+    $("logout-btn").addEventListener("click", async () => {
+      await db.auth.signOut();
+      currentUser = null;
+      dashboard.classList.add("hidden");
+      authScreen.classList.remove("hidden");
+      $("email-input").value = "";
+      $("password-input").value = "";
+      $("name-input").value = "";
+      view = "login";
+      renderAuth();
+    });
+
+    // ===== Holdings =====
+    function renderHoldings() {
+      const list = $("holdings-list");
+      list.innerHTML = "";
+      let total = 0;
+
+      coins.forEach(c => {
+        total += c.price * c.holdings;
+        const up = c.change >= 0;
+        const value = c.price * c.holdings;
+        list.innerHTML += `
+          <div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-100 to-indigo-100 dark:from-emerald-900/50 dark:to-indigo-900/50 flex items-center justify-center text-slate-800 dark:text-white font-bold text-xs">
+                ${c.symbol}
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900 dark:text-white text-sm">${c.name}</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">$${c.price.toLocaleString(undefined, {maximumFractionDigits: 2})}</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-semibold text-slate-900 dark:text-white text-sm">$${value.toLocaleString(undefined, {maximumFractionDigits: 2})}</p>
+              <p class="text-xs font-medium ${up ? 'text-emerald-500' : 'text-red-500'}">
+                ${up ? "▲" : "▼"} ${c.change.toFixed(2)}%
+              </p>
+            </div>
+          </div>`;
+      });
+
+      $("portfolio-value").textContent = "$" + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      $("cash-balance").textContent = "$" + cashBalance.toFixed(2);
+      $("btc-holdings").textContent = coins[0].holdings + " BTC";
+      $("btc-value").textContent = "≈ $" + (coins[0].price * coins[0].holdings).toLocaleString(undefined, {maximumFractionDigits: 2});
+    }
+
+    // ===== Live prices =====
+    async function fetchPrices() {
+      try {
+        const ids = Object.values(CG_IDS).join(",");
+        const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`);
+        const data = await res.json();
+        coins = coins.map(c => {
+          const d = data[CG_IDS[c.symbol]];
+          return d ? { ...c, price: d.usd ?? c.price, change: d.usd_24hr_change ?? c.change } : c;
+        });
+        $("last-update").textContent = new Date().toLocaleTimeString();
+        renderHoldings();
+      } catch (e) {
+        $("last-update").textContent = "offline (cached)";
+      }
+    }
+
+    // ===== Modal =====
+    window.openModal = function(type) {
+      activeModal = type;
+      $("modal").classList.remove("hidden");
+      $("modal-title").textContent = type.charAt(0).toUpperCase() + type.slice(1);
+      $("modal-confirm-label").textContent = type;
+      $("modal-amount").value = "";
+      $("modal-error").classList.add("hidden");
+      if (type === "withdraw") {
+        $("modal-balance").textContent = "Available: $" + cashBalance.toFixed(2);
+        $("modal-balance").classList.remove("hidden");
+      } else {
+        $("modal-balance").classList.add("hidden");
+      }
+      setTimeout(() => $("modal-amount").focus(), 50);
+    };
+
+    window.closeModal = function() {
+      $("modal").classList.add("hidden");
+      activeModal = null;
+    };
+
+    $("modal-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const n = parseFloat($("modal-amount").value);
+      const err = $("modal-error");
+      err.classList.add("hidden");
+
+      if (!n || n <= 0) {
+        err.textContent = "Enter a valid amount";
+        err.classList.remove("hidden");
+        return;
+      }
+
+      if (activeModal === "deposit") {
+        cashBalance += n;
+        showToast("Deposited $" + n.toFixed(2));
+      } else {
+        if (n > cashBalance) {
+          err.textContent = "Insufficient balance";
+          err.classList.remove("hidden");
+          return;
+        }
+        cashBalance -= n;
+        showToast("Withdrew $" + n.toFixed(2));
+      }
+      closeModal();
+      renderHoldings();
+    });
+
+    // ===== Toast =====
+    window.showToast = function(msg) {
+      const t = $("toast");
+      t.textContent = msg;
+      t.classList.remove("hidden");
+      setTimeout(() => t.classList.add("hidden"), 2500);
+    };
+
+    // ===== Init =====
+    $("year").textContent = new Date().getFullYear();
+    renderAuth();
+  </script>
+
+  <!-- Chatway widget -->
+  <script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=EDicIiTepGoB"></script>
+</body>
+</html>
