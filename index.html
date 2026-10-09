@@ -1,83 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Alliance Biz Capital — Grow Crypto With Confidence</title>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Alliance Biz Capital — All Pages Connected</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Outfit',sans-serif}
+*{font-family:Outfit,sans-serif}
 body{background:#070a14;color:#e2e8f0}
-.aurora{position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse 90% 70% at 10% 0%,rgba(16,185,129,0.35),transparent 60%),radial-gradient(ellipse 80% 60% at 90% 10%,rgba(99,102,241,0.40),transparent 60%),#070a14}
-.glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.10)}
-.glass-strong{background:rgba(255,255,255,0.10);backdrop-filter:blur(32px);border:1px solid rgba(255,255,255,0.14)}
-.grad{background:linear-gradient(135deg,#10b981 0%,#6366f1 100%)}
-.grad-text{background:linear-gradient(135deg,#10b981 0%,#6366f1 100%);-webkit-background-clip:text;color:transparent}
-.btn-grad{background:linear-gradient(135deg,#10b981 0%,#6366f1 100%);box-shadow:0 10px 30px rgba(16,185,129,0.35);transition:.3s}
-.btn-grad:hover{transform:translateY(-2px)}
+.aurora{position:fixed;inset:0;z-index:-2;background:radial-gradient(at 15% 10%,rgba(16,185,129,.35),transparent 60%),radial-gradient(at 85% 15%,rgba(99,102,241,.4),transparent 60%),#070a14}
+.glass{background:rgba(255,255,255,.06);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.1)}
+.grad{background:linear-gradient(135deg,#10b981,#6366f1)}
+.grad-text{background:linear-gradient(135deg,#10b981,#6366f1);-webkit-background-clip:text;color:transparent}
+.btn-grad{background:linear-gradient(135deg,#10b981,#6366f1);box-shadow:0 10px 30px rgba(16,185,129,.35)}
+.page{display:none}.page.active{display:block;animation:fade.4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.dash-tab{display:none}.dash-tab.active{display:block}
 </style>
 </head>
 <body>
 <div class="aurora"></div>
 
-<nav class="sticky top-0 z-50 glass border-b border-white/10">
+<!-- NAV — ALL PAGES CONNECTED -->
+<nav class="glass sticky top-0 z-50 border-b border-white/10">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<div class="flex items-center gap-3"><div class="w-11 h-11 rounded-2xl grad flex items-center justify-center font-extrabold text-white">AB</div><span class="font-extrabold text-xl text-white">Alliance <span class="grad-text">Biz Capital</span></span></div>
-<div class="flex gap-3"><button class="glass px-6 py-2.5 rounded-full text-sm text-white">Sign In</button><button class="btn-grad px-7 py-2.5 rounded-full text-sm text-white font-bold">Get Started</button></div>
+<div class="flex items-center gap-2"><div class="w-10 h-10 rounded-xl grad flex items-center justify-center font-extrabold text-white">AB</div><b class="text-white text-lg">Alliance <span class="grad-text">Biz Capital</span></b></div>
+<div class="flex gap-2">
+<button onclick="go('home')" class="glass px-5 py-2 rounded-full text-sm">Home</button>
+<button onclick="go('plans')" class="glass px-5 py-2 rounded-full text-sm">Plans</button>
+<button onclick="go('about')" class="glass px-5 py-2 rounded-full text-sm">About</button>
+<button onclick="go('dashboard')" class="btn-grad px-6 py-2 rounded-full text-sm text-white font-bold">Dashboard</button>
+</div>
 </div>
 </nav>
 
-<section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+<!-- HOME PAGE -->
+<div id="page-home" class="page active max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
 <div>
-<div class="glass inline-flex px-4 py-1.5 rounded-full text-xs text-emerald-300">● Live Support — Instant Pop Active</div>
-<h1 class="text-6xl font-extrabold leading-[0.9] mt-6 text-white">Grow your<br><span class="grad-text">crypto</span><br>with confidence</h1>
-<p class="text-slate-300 mt-6 text-lg">Premium crypto investment platform. $2B+ managed, 40K+ investors, 24/7 live support that pops instantly.</p>
-<div class="flex gap-4 mt-8">
-<button class="btn-grad px-8 py-4 rounded-full text-white font-bold">Start Investing</button>
-<button onclick="Chatway&&Chatway.open()" class="glass px-8 py-4 rounded-full text-white font-bold">💬 Chat Now</button>
+<span class="glass px-4 py-1 rounded-full text-xs text-emerald-300">● EDicIiTepGoB — Instant Pop Live</span>
+<h1 class="text-6xl font-extrabold leading-[0.9] mt-5 text-white">Grow your crypto<br><span class="grad-text">with confidence</span></h1>
+<p class="text-slate-300 mt-5">All pages connected — $2B+ managed, 40K+ investors, 24/7 human support.</p>
+<div class="flex gap-3 mt-7">
+<button onclick="go('dashboard')" class="btn-grad px-8 py-4 rounded-full text-white font-bold">Start Investing</button>
+<button onclick="Chatway&&Chatway.open()" class="glass px-8 py-4 rounded-full font-bold">💬 Chat Now</button>
 </div>
 </div>
-<div class="glass-strong rounded-[2.5rem] p-8">
-<h3 class="text-white font-bold">Portfolio Value</h3>
-<p class="text-5xl font-extrabold text-white mt-4">$12,480.20</p>
-<p class="text-emerald-400 text-sm mt-2">+12.4% today • Live</p>
-<div class="mt-6 space-y-3">
-<div class="glass rounded-2xl p-4 flex justify-between"><span class="text-white">₿ BTC</span><b class="text-white">$8,240</b></div>
-<div class="glass rounded-2xl p-4 flex justify-between"><span class="text-white">♦ ETH</span><b class="text-white">$3,120</b></div>
-<div class="glass rounded-2xl p-4 flex justify-between"><span class="text-white">$ USDT</span><b class="text-white">$1,120</b></div>
+<div class="glass rounded-[2rem] p-8">
+<h3 class="font-bold text-white">Portfolio</h3><p class="text-4xl font-extrabold text-white mt-2">$12,480.20</p><p class="text-emerald-400 text-xs mt-1">+12.4% Live</p>
+<div class="mt-6 space-y-2"><div class="glass p-4 rounded-xl flex justify-between"><span>₿ BTC</span><b>$8,240</b></div><div class="glass p-4 rounded-xl flex justify-between"><span>♦ ETH</span><b>$3,120</b></div><div class="glass p-4 rounded-xl flex justify-between"><span>$ USDT</span><b>$1,120</b></div></div>
+<button onclick="go('plans')" class="w-full btn-grad mt-6 py-3 rounded-xl text-white font-bold">View Plans</button>
 </div>
 </div>
-</section>
 
-<section class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-<div class="glass rounded-[2rem] p-8 text-center"><h4 class="text-white font-bold">Starter</h4><p class="text-3xl font-extrabold text-white mt-2">$100 min</p><p class="text-slate-400 text-sm mt-2">5% daily for 20 days</p></div>
-<div class="glass-strong rounded-[2rem] p-8 text-center border border-emerald-400/30"><h4 class="text-white font-bold">Growth — Popular</h4><p class="text-3xl font-extrabold text-white mt-2">$1K min</p><p class="text-slate-400 text-sm mt-2">8% daily for 25 days</p></div>
-<div class="glass rounded-[2rem] p-8 text-center"><h4 class="text-white font-bold">Elite</h4><p class="text-3xl font-extrabold text-white mt-2">$10K min</p><p class="text-slate-400 text-sm mt-2">12% daily for 30 days</p></div>
-</section>
+<!-- PLANS PAGE -->
+<div id="page-plans" class="page max-w-7xl mx-auto px-6 py-16">
+<h2 class="text-4xl font-extrabold text-center text-white">Investment <span class="grad-text">Plans</span></h2>
+<div class="grid md:grid-cols-3 gap-6 mt-10">
+<div class="glass rounded-[2rem] p-8 text-center"><h3 class="font-bold text-white">Starter</h3><p class="text-3xl font-extrabold text-white mt-2">$100 min</p><p class="text-sm text-slate-400 mt-2">5% daily 20 days</p><button onclick="go('dashboard')" class="w-full glass mt-6 py-3 rounded-full">Choose</button></div>
+<div class="glass rounded-[2rem] p-8 text-center border border-emerald-400/30"><h3 class="font-bold text-white">Growth ★</h3><p class="text-3xl font-extrabold text-white mt-2">$1K min</p><p class="text-sm text-slate-400 mt-2">8% daily 25 days</p><button onclick="go('dashboard')" class="w-full btn-grad mt-6 py-3 rounded-full text-white">Choose</button></div>
+<div class="glass rounded-[2rem] p-8 text-center"><h3 class="font-bold text-white">Elite</h3><p class="text-3xl font-extrabold text-white mt-2">$10K min</p><p class="text-sm text-slate-400 mt-2">12% daily 30 days</p><button onclick="go('dashboard')" class="w-full glass mt-6 py-3 rounded-full">Choose</button></div>
+</div>
+</div>
 
-<footer class="text-center text-slate-500 text-sm py-12 border-t border-white/10 mt-10">© 2026 Alliance Biz Capital</footer>
+<!-- ABOUT PAGE -->
+<div id="page-about" class="page max-w-5xl mx-auto px-6 py-16">
+<div class="glass rounded-[2.5rem] p-10 text-center"><h2 class="text-4xl font-extrabold text-white">About Alliance</h2><p class="text-slate-300 mt-4">Secure + instant human support. Chatway pops instantly to help you invest.</p><div class="grid md:grid-cols-3 gap-6 mt-10"><div class="glass p-6 rounded-2xl"><h4 class="font-bold text-white">Secure</h4><p class="text-sm text-slate-400">CertiK + Cold Storage</p></div><div class="glass p-6 rounded-2xl"><h4 class="font-bold text-white">Instant Support</h4><p class="text-sm text-slate-400">Chatway 24/7</p></div><div class="glass p-6 rounded-2xl"><h4 class="font-bold text-white">Proven</h4><p class="text-sm text-slate-400">$2B Managed</p></div></div></div>
+</div>
 
-<!-- YOUR CHATWAY WITH INSTANT POP -->
+<!-- DASHBOARD PAGE — ALL CONNECTED -->
+<div id="page-dashboard" class="page max-w-7xl mx-auto px-6 py-10">
+<div class="grid md:grid-cols-4 gap-6">
+<div class="glass rounded-[2rem] p-6 h-fit">
+<h3 class="font-bold text-white">Dashboard Menu</h3>
+<div class="mt-4 space-y-2">
+<button onclick="dtab('overview')" class="w-full glass text-left px-4 py-3 rounded-xl text-sm">📊 Overview</button>
+<button onclick="dtab('deposit')" class="w-full glass text-left px-4 py-3 rounded-xl text-sm">💰 Deposit</button>
+<button onclick="dtab('withdraw')" class="w-full glass text-left px-4 py-3 rounded-xl text-sm">💸 Withdraw</button>
+<button onclick="dtab('transactions')" class="w-full glass text-left px-4 py-3 rounded-xl text-sm">📜 History</button>
+<button onclick="dtab('referral')" class="w-full glass text-left px-4 py-3 rounded-xl text-sm">👥 Referral</button>
+<button onclick="Chatway&&Chatway.open()" class="w-full btn-grad text-left px-4 py-3 rounded-xl text-sm text-white font-bold">💬 Support — EDicIiTepGoB</button>
+</div>
+</div>
+<div class="md:col-span-3">
+<div id="tab-overview" class="dash-tab active glass rounded-[2rem] p-8"><h3 class="text-xl font-bold text-white">Overview</h3><div class="grid grid-cols-3 gap-4 mt-6"><div class="glass p-5 rounded-xl"><p class="text-xs text-slate-400">Balance</p><p class="font-bold text-white mt-1">$12,480</p></div><div class="glass p-5 rounded-xl"><p class="text-xs text-slate-400">Profit</p><p class="font-bold text-emerald-400 mt-1">+$1,376</p></div><div class="glass p-5 rounded-xl"><p class="text-xs text-slate-400">Chat</p><p class="font-bold text-white mt-1">Online</p></div></div></div>
+<div id="tab-deposit" class="dash-tab glass rounded-[2rem] p-8"><h3 class="font-bold text-white">Deposit</h3><input class="w-full mt-4 p-4 rounded-xl bg-white/5 border border-white/10 text-white" placeholder="Amount"/><button class="btn-grad w-full mt-4 py-3 rounded-xl text-white font-bold">Confirm</button></div>
+<div id="tab-withdraw" class="dash-tab glass rounded-[2rem] p-8"><h3 class="font-bold text-white">Withdraw</h3><input class="w-full mt-4 p-4 rounded-xl bg-white/5 border border-white/10 text-white" placeholder="Amount"/><input class="w-full mt-3 p-4 rounded-xl bg-white/5 border border-white/10 text-white" placeholder="Wallet Address"/><button class="btn-grad w-full mt-4 py-3 rounded-xl text-white font-bold">Request</button></div>
+<div id="tab-transactions" class="dash-tab glass rounded-[2rem] p-8"><h3 class="font-bold text-white">Transactions</h3><div class="mt-4 space-y-2 text-sm"><div class="glass p-3 rounded-xl flex justify-between"><span>Deposit</span><span class="text-emerald-400">Done</span></div></div></div>
+<div id="tab-referral" class="dash-tab glass rounded-[2rem] p-8"><h3 class="font-bold text-white">Referral</h3><div class="glass mt-4 p-4 rounded-xl text-sm">https://alliancebizcapital.com/ref/YOU123 — Earn 10%</div></div>
+</div>
+</div>
+</div>
+
+<script>
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function dtab(id){document.querySelectorAll('.dash-tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active')}
+</script>
+
+<!-- CHATWAY CONNECTED — ALL PAGES -->
 <script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=EDicIiTepGoB"></script>
 <script>
 (function(){
-  function popNow(){
-    var c=0;
-    var t=setInterval(function(){
-      c++;
-      if(window.Chatway){
-        clearInterval(t);
-        try{Chatway.show();}catch(e){}
-        try{Chatway.open();}catch(e){}
-      }
-      if(c>100) clearInterval(t);
-    },100);
-  }
-  window.addEventListener('load', popNow);
-  popNow();
+ var i=setInterval(function(){ if(window.Chatway){clearInterval(i); try{Chatway.show()}catch(e){} try{Chatway.open()}catch(e){} } },150);
+ window.addEventListener('load', function(){ setTimeout(function(){ try{Chatway&&Chatway.open()}catch(e){} },1000); });
 })();
 </script>
-
 </body>
 </html>
