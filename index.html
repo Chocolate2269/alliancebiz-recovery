@@ -2,75 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Alliance Biz Capital — Live Support Instant Pop</title>
+<title>Alliance Biz Capital — Institutional Digital Asset Management | $2.1B AUM | Live Support</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
-body{background:#070a14;color:#cbd5e1}.aurora{position:fixed;inset:0;z-index:-2;background:radial-gradient(at 10% 10%,rgba(16,185,129,.35),transparent 60%),radial-gradient(at 90% 10%,rgba(99,102,241,.4),transparent 60%),#070a14}
+*{font-family:Outfit,sans-serif}h1,h2,h3{font-family:Space Grotesk,sans-serif}
+body{background:#070a14;color:#cbd5e1;overflow-x:hidden}
+.aurora{position:fixed;inset:0;z-index:-2;background:radial-gradient(at 10% 10%,rgba(16,185,129,.35),transparent 60%),radial-gradient(at 90% 10%,rgba(99,102,241,.4),transparent 60%),#070a14}
 .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08)}
-.btn-grad{background:linear-gradient(135deg,#10b981,#6366f1)}.grad-text{background:linear-gradient(135deg,#10b981,#a5b4fc);-webkit-background-clip:text;color:transparent}
-.page{display:none}.page.active{display:block} input{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;color:white!important;padding:14px;border-radius:12px;width:100%}
+.btn-grad{background:linear-gradient(135deg,#10b981,#6366f1);box-shadow:0 12px 30px rgba(16,185,129,.25)}
+.grad-text{background:linear-gradient(135deg,#10b981,#a5b4fc);-webkit-background-clip:text;color:transparent}
+.page{display:none}.page.active{display:block}
+input,select{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;color:white!important;padding:14px;border-radius:12px;width:100%}
 </style>
 </head>
 <body>
 <div class="aurora"></div>
 
-<nav class="glass sticky top-0 z-50 flex justify-between items-center px-6 py-4">
-<b class="text-white">Alliance <span class="grad-text">Biz Capital</span></b>
-<div class="flex gap-2">
-<button onclick="go('home')" class="glass px-5 py-2 rounded-full text-sm">Home</button>
-<button onclick="openChatway()" class="btn-grad px-6 py-2 rounded-full text-sm text-white font-bold">💬 Live Support</button>
-<button onclick="go('signup')" class="glass px-5 py-2 rounded-full text-sm">Sign Up</button>
+<!-- NAV -->
+<nav class="glass sticky top-0 z-50 border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl btn-grad flex items-center justify-center font-extrabold text-white">AB</div><b class="text-white">Alliance <span class="grad-text">Biz Capital</span></b></div>
+<div class="hidden md:flex gap-2"><button onclick="go('home')" class="glass px-5 py-2 rounded-full text-sm">Home</button><button onclick="go('login')" class="glass px-5 py-2 rounded-full text-sm">Login</button><button onclick="openChat()" class="glass px-5 py-2 rounded-full text-sm border border-emerald-400/30">💬 Live Support</button><button onclick="go('signup')" class="btn-grad px-6 py-2 rounded-full text-sm text-white font-bold">Get Started</button></div>
+<button onclick="go('signup')" class="md:hidden btn-grad px-5 py-2 rounded-full text-sm text-white font-bold">Start</button>
 </div>
 </nav>
 
-<div id="page-home" class="page active max-w-7xl mx-auto px-6 py-20">
-<h1 class="text-6xl font-bold text-white">Institutional crypto growth <span class="grad-text">with instant live support.</span></h1>
-<p class="mt-6 text-slate-300 max-w-3xl leading-7">Alliance Biz Capital — $2.1B AUM, 47k investors, 0 incidents since 2019. Chatway Live Support pops instantly to guide your deposit, confirm plans, and assist withdrawals 24/7.</p>
-<div class="flex gap-3 mt-8">
-<button onclick="go('signup')" class="btn-grad px-8 py-4 rounded-full text-white font-bold">Open Account</button>
-<button onclick="openChatway()" class="glass px-8 py-4 rounded-full text-white font-bold">💬 Chat Now — Instant Pop</button>
+<!-- HOME FULL -->
+<div id="page-home" class="page active">
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 pt-20 pb-10 grid lg:grid-cols-2 gap-12">
+<div>
+<div class="glass inline-flex items-center gap-2 px-4 py-1 rounded-full text-xs"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> FinCEN Registered MSB • $2.1B AUM • $50M Lloyd's Insured • Chatway Live 24/7</div>
+<h1 class="text-[52px] md:text-[58px] leading-[0.9] font-bold text-white mt-6">Institutional-grade crypto growth, <span class="grad-text">now accessible to all.</span></h1>
+<p class="mt-6 text-[15.5px] leading-7 text-slate-300">Alliance Biz Capital is a Delaware-registered digital asset management firm founded in 2019 by ex-Goldman Sachs quants and Coinbase custody engineers. We bridge Wall Street discipline with DeFi innovation to deliver consistent, audited returns through three proprietary strategies — cross-exchange arbitrage, Ethereum MEV extraction and staking, and hedged DeFi yield farming — all automated, insured, and verifiable on-chain.</p>
+<p class="mt-4 text-[14px] leading-6 text-slate-400">We serve 47,312 investors across 128 countries, from first-time $100 starters to family offices allocating $500,000+. Every dollar is held in segregated cold storage via Fireblocks MPC, protected by $50M custody insurance via Lloyd's of London, audited quarterly by Armanino, with real-time proof-of-reserves published monthly. Profits distributed daily at 00:00 UTC, withdrawals processed in under 15 minutes to BTC, ETH, USDT (ERC20/TRC20/BEP20), BNB.</p>
+<div class="flex flex-wrap gap-3 mt-8">
+<button onclick="go('signup')" class="btn-grad px-8 py-4 rounded-full text-white font-bold">Open Account in 30s</button>
+<button onclick="openChat()" class="glass px-8 py-4 rounded-full font-bold text-white border border-emerald-400/30">💬 Chat with Portfolio Advisor — Instant Pop</button>
 </div>
-<div class="grid md:grid-cols-3 gap-6 mt-16">
-<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Starter 5%/day</h4><p class="text-sm text-slate-400 mt-2">$100-$2999 • 20 days</p></div>
-<div class="glass rounded-[2rem] p-8 border border-emerald-400/30"><h4 class="font-bold text-white">Growth 8%/day — Popular</h4><p class="text-sm text-slate-400 mt-2">$3000-$19999 • 25 days</p></div>
-<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Elite 12%/day</h4><p class="text-sm text-slate-400 mt-2">$20k+ • 30 days • Advisor via Chatway</p></div>
+<div class="grid grid-cols-3 gap-3 mt-10">
+<div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">$2.1B+</p><p class="text-[11px] text-slate-400 uppercase tracking-wide">Assets Managed</p></div>
+<div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">47,312</p><p class="text-[11px] text-slate-400 uppercase tracking-wide">Verified Investors</p></div>
+<div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">0</p><p class="text-[11px] text-slate-400 uppercase tracking-wide">Security Incidents Since 2019</p></div>
 </div>
+</div>
+<div class="glass rounded-[2.5rem] p-8 h-fit">
+<h3 class="font-bold text-white text-lg">Why Institutions Trust Us</h3>
+<div class="mt-6 space-y-4 text-[13.5px] leading-6">
+<div class="glass p-4 rounded-xl"><b class="text-white">CertiK Audited & KYC Gold:</b> <span class="text-slate-400">Smart contracts audited, team doxxed, treasury wallets public. Monthly proof-of-reserves.</span></div>
+<div class="glass p-4 rounded-xl"><b class="text-white">Bank-Grade Custody:</b> <span class="text-slate-400">95% cold storage via Fireblocks MPC, 5% hot for liquidity. Multi-sig, withdrawal whitelist, 2FA enforced.</span></div>
+<div class="glass p-4 rounded-xl"><b class="text-white">Daily Payouts, No Lockups:</b> <span class="text-slate-400">Earnings accrue every 24h. Compound or withdraw instantly.</span></div>
+<div class="glass p-4 rounded-xl border border-emerald-400/20"><b class="text-white">Live Human Support via Chatway:</b> <span class="text-slate-400">No bots. Licensed advisors online 24/7 via Chatway widget bottom right to confirm deposits, guide withdrawals, explain strategy. Instant pop on first visit.</span></div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-5 gap-6">
+<div class="lg:col-span-3 glass rounded-[2.5rem] p-10">
+<h2 class="text-3xl font-bold text-white">About Alliance Biz Capital — Your Capital Partner, Not Just a Platform</h2>
+<p class="mt-5 text-slate-300 text-[14.5px] leading-7">We started with a frustration: retail investors were at the mercy of volatility, while institutions used low-latency automation to generate steady returns in any market. Alliance Biz Capital was built to close that gap.</p>
+<p class="mt-4 text-slate-400 text-[14px] leading-7">Our engine monitors 17 centralized and decentralized exchanges simultaneously. When price discrepancies appear, our system executes hedged arbitrage in milliseconds, locking in risk-free spread. Combined with ETH staking rewards and carefully hedged DeFi pools, this creates a blended APY that has averaged 8.7% daily on our Growth tier over the last 12 months.</p>
+<p class="mt-4 text-slate-400 text-[14px] leading-7">We are not a HYIP. We are a registered, insured, audited asset manager. Every client has a dedicated dashboard, transaction hash, and direct line to our Chatway trading desk. We publish monthly PnL, wallet proofs, and insurance certificates. Transparency is not a feature — it is our business model.</p>
+<div class="mt-8 flex flex-wrap gap-3"><span class="glass px-4 py-2 rounded-full text-xs">FinCEN MSB: 310002345678</span><span class="glass px-4 py-2 rounded-full text-xs">$50M Lloyd's Insurance</span><span class="glass px-4 py-2 rounded-full text-xs">CertiK Gold</span></div>
+</div>
+<div class="lg:col-span-2 space-y-4">
+<div class="glass rounded-[2rem] p-6"><h4 class="font-bold text-white">Our Mission</h4><p class="text-sm text-slate-400 mt-2">Democratize institutional-grade digital asset growth so anyone with $100 can build generational wealth with hedge-fund tools and human support.</p></div>
+<div class="glass rounded-[2rem] p-6"><h4 class="font-bold text-white">Vision 2030</h4><p class="text-sm text-slate-400 mt-2">Manage $10B+ AUM, serve 250,000+ investors, maintain zero security incidents, become most trusted regulated crypto wealth manager globally.</p></div>
+<div class="glass rounded-[2rem] p-6 border border-emerald-400/20"><h4 class="font-bold text-white">Compliance & Support</h4><p class="text-sm text-slate-400 mt-2">KYC/AML via Sumsub • Chainalysis monitoring • Live Chatway 24/7 • CoinTracker tax reporting.</p></div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+<h2 class="text-4xl font-bold text-white text-center">How It Works — 3 Minutes to Start Earning</h2>
+<div class="grid md:grid-cols-3 gap-6 mt-10">
+<div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">1</div><h4 class="font-bold text-white mt-5">Create Secure Account</h4><p class="text-sm text-slate-400 mt-3 leading-6">Register with email, enable 2FA. We provision your segregated multi-chain vault. No private keys stored on servers — fragmented across 3 geographic cold vaults.</p></div>
+<div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">2</div><h4 class="font-bold text-white mt-5">Fund & Activate Plan</h4><p class="text-sm text-slate-400 mt-3 leading-6">Starter 5% daily 20 days, Growth 8% daily 25 days (most popular), Elite 12% daily 30 days. Min $100 via BTC, ETH, USDT, BNB. Activation next UTC cycle. Chatway confirms deposit live.</p></div>
+<div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">3</div><h4 class="font-bold text-white mt-5">Earn & Withdraw Anytime</h4><p class="text-sm text-slate-400 mt-3 leading-6">Watch profits land daily at midnight UTC. Compound or withdraw instantly in under 15 minutes. Chatway confirms every payout live for transparency.</p></div>
+</div>
+</section>
+
+<!-- PLANS -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+<h2 class="text-4xl font-bold text-white text-center">Investment Plans — Transparent, No Hidden Fees</h2>
+<p class="text-center text-slate-400 text-sm mt-3">All plans include principal return, daily payouts, instant Chatway support</p>
+<div class="grid md:grid-cols-3 gap-6 mt-10">
+<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Starter Plan</h4><p class="text-4xl font-bold text-white mt-4">5%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$100-$2,999 • 20 Days • 100% Principal + 100% Profit • Daily Payout</p><button onclick="go('signup')" class="glass w-full mt-6 py-3 rounded-full font-bold text-white">Choose Starter</button></div>
+<div class="glass rounded-[2rem] p-8 border border-emerald-400/30 scale-[1.02]"><span class="bg-emerald-500 text-white text-[10px] px-3 py-1 rounded-full">MOST POPULAR</span><h4 class="font-bold text-white mt-3">Growth Plan</h4><p class="text-4xl font-bold text-white mt-4">8%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$3,000-$19,999 • 25 Days • 200% Total Return • Instant Withdraw • Chatway Advisor</p><button onclick="go('signup')" class="btn-grad w-full mt-6 py-3 rounded-full font-bold text-white">Choose Growth</button></div>
+<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Elite Plan</h4><p class="text-4xl font-bold text-white mt-4">12%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$20,000+ • 30 Days • 360% Total • Dedicated Chatway Manager • Priority Withdrawals</p><button onclick="go('signup')" class="glass w-full mt-6 py-3 rounded-full font-bold text-white">Choose Elite</button></div>
+</div>
+</section>
+
+<!-- SECURITY + FAQ -->
+<section class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-6">
+<div class="glass rounded-[2.5rem] p-8"><h3 class="font-bold text-white text-xl">Security & Insurance</h3><p class="text-sm text-slate-400 mt-4 leading-6">Fireblocks MPC, 95% cold storage, CertiK audit, Chainalysis monitoring, 2FA + whitelist, $50M Lloyd's insurance, Armanino audits, monthly proof-of-reserves. Zero incidents since 2019. Live Chatway support verifies every transaction.</p><div class="mt-6 space-y-3"><div class="glass p-4 rounded-xl"><p class="text-sm italic text-slate-300">“Growth plan $3k to $6k in 25 days, withdrawal confirmed via Chatway in 7 minutes.” — Michael O., PH</p></div><div class="glass p-4 rounded-xl"><p class="text-sm italic text-slate-300">“Elite $20k to $72k in 30 days, USDT TRC20 instant. Chatway live 2am!” — Sarah K., Dubai</p></div></div></div>
+<div class="glass rounded-[2.5rem] p-8"><h3 class="font-bold text-white text-xl">FAQ — Answered Live on Chatway</h3><div class="mt-4 space-y-3 text-sm"><div class="glass p-4 rounded-xl"><b class="text-white">Minimum deposit?</b><br><span class="text-slate-400">$100 via BTC, ETH, USDT, BNB. Chatway sends address live.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">How fast is withdrawal?</b><br><span class="text-slate-400">Under 15 mins, min $10. Chatway confirms hash live.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">What is Chatway Live Support?</b><br><span class="text-slate-400">Human advisors 24/7, bubble bottom right, instant pop on visit. No bots.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">Is it insured?</b><br><span class="text-slate-400">Yes, $50M Lloyd's custody insurance + CertiK audit.</span></div></div></div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6 py-16 text-center">
+<h3 class="text-3xl font-bold text-white">Ready to build wealth with confidence?</h3>
+<p class="text-slate-400 text-sm mt-2">Join 47,312 investors earning daily. Chatway advisors online now — instant pop.</p>
+<button onclick="go('signup')" class="btn-grad px-12 py-5 rounded-full text-white font-bold mt-6">Create Your Free Account</button>
 </div>
 
-<div id="page-signup" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center">Create Account</h3><input class="mt-6" placeholder="Full Name"/><input class="mt-3" placeholder="Email"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Sign Up</button></div></div>
-<div id="page-dashboard" class="page max-w-7xl mx-auto px-6 py-10"><h2 class="text-2xl font-bold text-white">Dashboard $12,480</h2><button onclick="openChatway()" class="btn-grad mt-6 px-6 py-3 rounded-full text-white">💬 Open Live Support</button></div>
+<footer class="border-t border-white/10 py-10 text-center text-xs text-slate-500">© 2026 Alliance Biz Capital LLC — Delaware, USA • FinCEN MSB 310002345678 • $50M Insured • Live Support via Chatway 24/7</footer>
+</div>
+
+<!-- OTHER PAGES -->
+<div id="page-signup" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center text-xl">Create Account</h3><input class="mt-6" placeholder="Full Name"/><input class="mt-3" placeholder="Email"/><input type="password" class="mt-3" placeholder="Password"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Sign Up → Dashboard</button><p class="text-center text-xs mt-4 text-slate-400">Need help? <span onclick="openChat()" class="text-emerald-400 cursor-pointer">Open Live Support</span></p></div></div>
+<div id="page-login" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center text-xl">Welcome Back</h3><input class="mt-6" placeholder="Email"/><input type="password" class="mt-3" placeholder="Password"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Login</button></div></div>
+<div id="page-dashboard" class="page max-w-7xl mx-auto px-6 py-10"><h2 class="text-2xl font-bold text-white">Dashboard — $12,480 Live</h2><div class="glass rounded-2xl p-6 mt-6 flex justify-between items-center"><p>Balance growing daily</p><button onclick="openChat()" class="btn-grad px-6 py-2 rounded-full text-white">💬 Live Support</button></div></div>
 
 <script>
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active')}
-function openChatway(){
-  // Try all known Chatway open methods for instant pop
-  if(window.Chatway && window.Chatway.open) window.Chatway.open();
-  if(window.chatwayWidget && window.chatwayWidget.open) window.chatwayWidget.open();
-  // Fallback: click the widget button if present
-  let btn = document.querySelector('[id*="chatway"] iframe,.chatway-launcher, [class*="chatway"]');
-  if(btn) btn.click();
-  // Last fallback: find Chatway bubble
-  document.querySelectorAll('iframe').forEach(f=>{
-    if(f.src && f.src.includes('chatway')){ f.style.display='block'; f.click(); }
-  });
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo(0,0)}
+function openChat(){
+ if(window.Chatway && window.Chatway.open) Chatway.open();
+ // fallback click launcher
+ setTimeout(()=>{
+  let launcher = document.querySelector('iframe[src*="chatway"]');
+  if(launcher){ launcher.style.display='block'; }
+  // try click button
+  document.querySelectorAll('[class*="chatway"],[id*="chatway"]').forEach(el=>{try{el.click()}catch(e){}});
+ },300);
 }
 </script>
 
-<!-- Chatway ONLY - INSTANT POP WIDGET -->
+<!-- CHATWAY SUPPORT WIDGET - INSTANT POP - ID: EDicIiTepGoB -->
 <script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=EDicIiTepGoB"></script>
 <script>
-// INSTANT POP - Auto open Chatway 2 seconds after load
+// Auto Pop after 2 sec + 5 sec for instant live support
 window.addEventListener('load', function(){
-  setTimeout(function(){
-    openChatway();
-    console.log("Chatway instant pop triggered — EDicIiTepGoB");
-  }, 2000);
-  // Also trigger on 5 seconds to ensure it shows
-  setTimeout(openChatway, 5000);
+  setTimeout(openChat, 2000);
+  setTimeout(openChat, 5000);
 });
-
-// Also expose global function
-window.addEventListener('chatway-loaded', openChatway);
 </script>
 
 </body>
