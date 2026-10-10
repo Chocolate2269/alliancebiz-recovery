@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Alliance Biz Capital — Institutional Digital Asset Management | $2.1B AUM</title>
+<title>Alliance Biz Capital — Live Support Instant Pop</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
-*{font-family:Outfit,sans-serif}h1,h2,h3{font-family:Space Grotesk,sans-serif}
 body{background:#070a14;color:#cbd5e1}.aurora{position:fixed;inset:0;z-index:-2;background:radial-gradient(at 10% 10%,rgba(16,185,129,.35),transparent 60%),radial-gradient(at 90% 10%,rgba(99,102,241,.4),transparent 60%),#070a14}
 .glass{background:rgba(255,255,255,.06);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08)}
 .btn-grad{background:linear-gradient(135deg,#10b981,#6366f1)}.grad-text{background:linear-gradient(135deg,#10b981,#a5b4fc);-webkit-background-clip:text;color:transparent}
@@ -15,62 +13,65 @@ body{background:#070a14;color:#cbd5e1}.aurora{position:fixed;inset:0;z-index:-2;
 </head>
 <body>
 <div class="aurora"></div>
-<nav class="glass sticky top-0 z-50 border-b border-white/10"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl btn-grad flex items-center justify-center font-extrabold text-white">AB</div><b class="text-white">Alliance <span class="grad-text">Biz Capital</span></b></div><div class="flex gap-2"><button onclick="go('home')" class="glass px-5 py-2 rounded-full text-sm">Home</button><button onclick="go('login')" class="glass px-5 py-2 rounded-full text-sm">Login</button><button onclick="go('signup')" class="btn-grad px-6 py-2 rounded-full text-sm text-white font-bold">Get Started</button></div></div></nav>
 
-<div id="page-home" class="page active">
-
-<!-- 1 HERO -->
-<section class="max-w-7xl mx-auto px-6 pt-20 pb-10 grid lg:grid-cols-2 gap-12">
-<div>
-<div class="glass inline-flex gap-2 px-4 py-1 rounded-full text-xs">● FinCEN Registered • $2.1B AUM • $50M Insured • Tawk.to 24/7 Live</div>
-<h1 class="text-[54px] leading-[0.9] font-bold text-white mt-6">Institutional-grade crypto growth, <span class="grad-text">now accessible to all.</span></h1>
-<p class="mt-6 text-[15px] leading-7 text-slate-300">Alliance Biz Capital is a Delaware-registered digital asset management firm founded in 2019 by former Goldman Sachs and Coinbase engineers. We bridge Wall Street discipline with DeFi innovation to deliver consistent, audited returns through proprietary low-latency execution.</p>
-<p class="mt-4 text-[14px] leading-6 text-slate-400">We serve 47,312 investors in 128 countries, from $100 starters to $500k+ family offices. Every dollar is held in segregated cold storage via Fireblocks MPC, protected by $50M custody insurance via Lloyd's, audited quarterly by Armanino, and verifiable on-chain. Daily payouts at 00:00 UTC, withdrawals in <15 mins to BTC, ETH, USDT, BNB.</p>
-<div class="flex gap-3 mt-8"><button onclick="go('signup')" class="btn-grad px-8 py-4 rounded-full text-white font-bold">Open Account in 30s</button><button onclick="Tawk_API.maximize()" class="glass px-8 py-4 rounded-full font-bold text-white">💬 Chat Advisor</button></div>
-<div class="grid grid-cols-3 gap-3 mt-10"><div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">$2.1B+</p><p class="text-[11px] text-slate-400">AUM</p></div><div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">47,312</p><p class="text-[11px] text-slate-400">Investors</p></div><div class="glass rounded-2xl p-4"><p class="text-2xl font-bold text-white">0 Incidents</p><p class="text-[11px] text-slate-400">Since 2019</p></div></div>
+<nav class="glass sticky top-0 z-50 flex justify-between items-center px-6 py-4">
+<b class="text-white">Alliance <span class="grad-text">Biz Capital</span></b>
+<div class="flex gap-2">
+<button onclick="go('home')" class="glass px-5 py-2 rounded-full text-sm">Home</button>
+<button onclick="openChatway()" class="btn-grad px-6 py-2 rounded-full text-sm text-white font-bold">💬 Live Support</button>
+<button onclick="go('signup')" class="glass px-5 py-2 rounded-full text-sm">Sign Up</button>
 </div>
-<div class="glass rounded-[2.5rem] p-8"><h3 class="font-bold text-white text-lg">Why 47,312 Trust Us</h3><div class="mt-6 space-y-4 text-[13px] leading-6"><div class="glass p-4 rounded-xl"><b class="text-white">CertiK Audited & KYC Gold:</b> <span class="text-slate-400">Audited contracts, doxxed team, public treasury, monthly proof-of-reserves.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">3 Proprietary Strategies:</b> <span class="text-slate-400">Cross-exchange arbitrage across 17 exchanges, ETH MEV + staking, hedged DeFi yield farming.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">Bank-Grade Security:</b> <span class="text-slate-400">95% cold, 5% hot, multi-sig, whitelist, 2FA enforced, $50M Lloyd's insurance.</span></div><div class="glass p-4 rounded-xl border border-emerald-400/20"><b class="text-white">Human Support via Tawk.to:</b> <span class="text-slate-400">No bots — licensed traders online 24/7 to confirm deposits/withdrawals live.</span></div></div></div>
-</section>
+</nav>
 
-<!-- 2 ABOUT -->
-<section class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-5 gap-6"><div class="lg:col-span-3 glass rounded-[2.5rem] p-10"><h2 class="text-3xl font-bold text-white">About Alliance Biz Capital — More Than a Platform, A Capital Partner</h2><p class="mt-5 text-slate-300 text-[14.5px] leading-7">We started with a frustration: retail investors were losing to volatility while institutions used AI and arbitrage to print consistent returns. We brought those tools to everyone.</p><p class="mt-4 text-slate-400 text-[14px] leading-7">Our engine monitors 17 CEX & DEX simultaneously, executes hedged arbitrage in milliseconds, plus ETH staking and hedged DeFi pools. Blended APY averaged 8.7% daily on Growth over last 12 months — verifiable on-chain.</p><p class="mt-4 text-slate-400 text-[14px] leading-7">We are registered FinCEN MSB 310002345678, insured $50M by Lloyd's, CertiK KYC Gold, audited by Armanino. We publish monthly PnL, wallet proofs, insurance certs. Transparency is our business model.</p></div><div class="lg:col-span-2 space-y-4"><div class="glass rounded-[2rem] p-6"><h4 class="font-bold text-white">Our Mission</h4><p class="text-sm text-slate-400 mt-2">Democratize institutional-grade crypto growth so anyone with $100 can build generational wealth like a hedge fund.</p></div><div class="glass rounded-[2rem] p-6"><h4 class="font-bold text-white">Vision 2030</h4><p class="text-sm text-slate-400 mt-2">Manage $10B+ AUM, 250k+ investors, zero security incidents, become most trusted regulated crypto wealth manager globally.</p></div><div class="glass rounded-[2rem] p-6 border border-emerald-400/20"><h4 class="font-bold text-white">Compliance</h4><p class="text-sm text-slate-400 mt-2">KYC/AML Sumsub • Chainalysis • US/EU/UK counsel • CoinTracker tax reporting.</p></div></div></section>
-
-<!-- 3 HOW IT WORKS -->
-<section class="max-w-7xl mx-auto px-6 py-16"><h2 class="text-4xl font-bold text-white text-center">How It Works — 3 Minutes to Start Earning</h2><div class="grid md:grid-cols-3 gap-6 mt-10"><div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">1</div><h4 class="font-bold text-white mt-5">Create Secure Account</h4><p class="text-sm text-slate-400 mt-3 leading-6">20 seconds, email + 2FA. We provision segregated multi-chain vault. Keys fragmented across 3 cold vaults globally.</p></div><div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">2</div><h4 class="font-bold text-white mt-5">Choose Plan & Deposit</h4><p class="text-sm text-slate-400 mt-3 leading-6">Starter 5% daily 20 days, Growth 8% daily 25 days (popular), Elite 12% daily 30 days. Min $100 via BTC/ETH/USDT/BNB. Activation next UTC.</p></div><div class="glass rounded-[2rem] p-8"><div class="w-10 h-10 rounded-full btn-grad flex items-center justify-center font-bold text-white">3</div><h4 class="font-bold text-white mt-5">Earn & Withdraw Anytime</h4><p class="text-sm text-slate-400 mt-3 leading-6">Profits hit daily midnight UTC. Compound or withdraw <15 mins. Tawk.to confirms every payout live.</p></div></div></section>
-
-<!-- 4 PLANS -->
-<section class="max-w-7xl mx-auto px-6 py-16"><h2 class="text-4xl font-bold text-white text-center">Investment Plans — Transparent, No Hidden Fees</h2><div class="grid md:grid-cols-3 gap-6 mt-10"><div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Starter</h4><p class="text-4xl font-bold text-white mt-4">5%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$100 - $2,999 • 20 Days • Principal Return • Daily Payout • Instant Withdraw</p><button onclick="go('signup')" class="glass w-full mt-6 py-3 rounded-full font-bold text-white">Choose Starter</button></div><div class="glass rounded-[2rem] p-8 border border-emerald-400/30 scale-[1.02]"><span class="bg-emerald-500 text-white text-[10px] px-3 py-1 rounded-full">MOST POPULAR</span><h4 class="font-bold text-white mt-3">Growth</h4><p class="text-4xl font-bold text-white mt-4">8%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$3,000 - $19,999 • 25 Days • 200% Total • Most ROI</p><button onclick="go('signup')" class="btn-grad w-full mt-6 py-3 rounded-full font-bold text-white">Choose Growth</button></div><div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Elite</h4><p class="text-4xl font-bold text-white mt-4">12%<span class="text-sm font-normal">/day</span></p><p class="text-sm text-slate-400 mt-4">$20k+ • 30 Days • 360% Total • Dedicated Advisor via Tawk</p><button onclick="go('signup')" class="glass w-full mt-6 py-3 rounded-full font-bold text-white">Choose Elite</button></div></div></section>
-
-<!-- 5 SECURITY + TESTIMONIALS + FAQ -->
-<section class="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-6">
-<div class="glass rounded-[2.5rem] p-8"><h3 class="font-bold text-white">Security & Insurance</h3><p class="text-sm text-slate-400 mt-4 leading-6">Fireblocks MPC, 95% cold storage, CertiK audit, Chainalysis monitoring, 2FA + whitelist, $50M Lloyd's insurance, Armanino audits, proof-of-reserves monthly. Zero incidents since 2019.</p><div class="mt-6 glass p-4 rounded-xl"><p class="text-sm italic text-slate-300">“I started $500 Growth, withdrew $1500 in 25 days. Tawk support live every time.” — Michael O., PH</p></div><div class="mt-4 glass p-4 rounded-xl"><p class="text-sm italic text-slate-300">“Elite plan changed my life. $20k to $72k in 30 days, instant USDT TRC20 withdrawal.” — Sarah K., Dubai</p></div></div>
-<div class="glass rounded-[2.5rem] p-8"><h3 class="font-bold text-white">FAQ</h3><div class="mt-4 space-y-3 text-sm"><div class="glass p-4 rounded-xl"><b class="text-white">Minimum deposit?</b><br><span class="text-slate-400">$100 in BTC, ETH, USDT, BNB.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">Withdrawal time?</b><br><span class="text-slate-400">Under 15 minutes, min $10.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">Is Tawk.to support human?</b><br><span class="text-slate-400">Yes, 24/7 real traders, not bots. Click bubble bottom right.</span></div><div class="glass p-4 rounded-xl"><b class="text-white">Is it insured?</b><br><span class="text-slate-400">Yes, $50M Lloyd's custody insurance.</span></div></div></div>
-</section>
-
-<footer class="border-t border-white/10 mt-10 py-10 text-center text-xs text-slate-500">© 2026 Alliance Biz Capital LLC — Delaware, USA • FinCEN MSB 310002345678 • Support via Tawk.to 24/7 • All rights reserved</footer>
+<div id="page-home" class="page active max-w-7xl mx-auto px-6 py-20">
+<h1 class="text-6xl font-bold text-white">Institutional crypto growth <span class="grad-text">with instant live support.</span></h1>
+<p class="mt-6 text-slate-300 max-w-3xl leading-7">Alliance Biz Capital — $2.1B AUM, 47k investors, 0 incidents since 2019. Chatway Live Support pops instantly to guide your deposit, confirm plans, and assist withdrawals 24/7.</p>
+<div class="flex gap-3 mt-8">
+<button onclick="go('signup')" class="btn-grad px-8 py-4 rounded-full text-white font-bold">Open Account</button>
+<button onclick="openChatway()" class="glass px-8 py-4 rounded-full text-white font-bold">💬 Chat Now — Instant Pop</button>
+</div>
+<div class="grid md:grid-cols-3 gap-6 mt-16">
+<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Starter 5%/day</h4><p class="text-sm text-slate-400 mt-2">$100-$2999 • 20 days</p></div>
+<div class="glass rounded-[2rem] p-8 border border-emerald-400/30"><h4 class="font-bold text-white">Growth 8%/day — Popular</h4><p class="text-sm text-slate-400 mt-2">$3000-$19999 • 25 days</p></div>
+<div class="glass rounded-[2rem] p-8"><h4 class="font-bold text-white">Elite 12%/day</h4><p class="text-sm text-slate-400 mt-2">$20k+ • 30 days • Advisor via Chatway</p></div>
+</div>
 </div>
 
-<!-- OTHER PAGES -->
-<div id="page-signup" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center">Create Account</h3><input class="mt-6" placeholder="Full Name"/><input class="mt-3" placeholder="Email"/><input type="password" class="mt-3" placeholder="Password"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Sign Up → Dashboard</button></div></div>
-<div id="page-login" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center">Login</h3><input class="mt-6" placeholder="Email"/><input type="password" class="mt-3" placeholder="Password"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Login</button></div></div>
-<div id="page-dashboard" class="page max-w-7xl mx-auto px-6 py-10"><h2 class="text-2xl font-bold text-white">Full Design Dashboard</h2><div class="glass rounded-2xl p-6 mt-6 flex justify-between items-center"><p>Balance $12,480 — Live</p><button onclick="Tawk_API.maximize()" class="btn-grad px-6 py-2 rounded-full text-white">💬 Support</button></div></div>
+<div id="page-signup" class="page max-w-md mx-auto px-6 py-20"><div class="glass rounded-[2rem] p-8"><h3 class="text-white font-bold text-center">Create Account</h3><input class="mt-6" placeholder="Full Name"/><input class="mt-3" placeholder="Email"/><button onclick="go('dashboard')" class="btn-grad w-full mt-6 py-4 rounded-xl text-white font-bold">Sign Up</button></div></div>
+<div id="page-dashboard" class="page max-w-7xl mx-auto px-6 py-10"><h2 class="text-2xl font-bold text-white">Dashboard $12,480</h2><button onclick="openChatway()" class="btn-grad mt-6 px-6 py-3 rounded-full text-white">💬 Open Live Support</button></div>
 
-<script>function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo(0,0)}</script>
-
-<!--Start of Tawk.to Script — FINAL NEW ID -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ac982e5f9ae7734d6e71653/1k4hiekkk';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-Tawk_API.onLoad = function(){ Tawk_API.showWidget(); };
+<script>
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active')}
+function openChatway(){
+  // Try all known Chatway open methods for instant pop
+  if(window.Chatway && window.Chatway.open) window.Chatway.open();
+  if(window.chatwayWidget && window.chatwayWidget.open) window.chatwayWidget.open();
+  // Fallback: click the widget button if present
+  let btn = document.querySelector('[id*="chatway"] iframe,.chatway-launcher, [class*="chatway"]');
+  if(btn) btn.click();
+  // Last fallback: find Chatway bubble
+  document.querySelectorAll('iframe').forEach(f=>{
+    if(f.src && f.src.includes('chatway')){ f.style.display='block'; f.click(); }
+  });
+}
 </script>
-<!--End of Tawk.to Script-->
+
+<!-- Chatway ONLY - INSTANT POP WIDGET -->
+<script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=EDicIiTepGoB"></script>
+<script>
+// INSTANT POP - Auto open Chatway 2 seconds after load
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    openChatway();
+    console.log("Chatway instant pop triggered — EDicIiTepGoB");
+  }, 2000);
+  // Also trigger on 5 seconds to ensure it shows
+  setTimeout(openChatway, 5000);
+});
+
+// Also expose global function
+window.addEventListener('chatway-loaded', openChatway);
+</script>
 
 </body>
 </html>
